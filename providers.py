@@ -23,8 +23,7 @@ def download(plugin, server_ver, headers):
             filename = versions[0]["files"][0]["filename"]
             filename = "./plugins/update/" + filename
 
-            response = requests.get(url, )
-
+            response = requests.get(url)
             with open(filename, 'wb') as f:
                 f.write(response.content)
 

@@ -5,15 +5,13 @@
             "name": "Chunky",
             "provider": "modrinth",
             "id": "fALzjamp",
-            "url": "https://modrinth.com/plugin/chunky",
-            "version": "1.4.10"
+            "url": "https://modrinth.com/plugin/chunky"
         },
         {
             "name": "DiscordSRV",
             "provider": "modrinth",
             "id": "UmLGoGij",
-            "url": "https://modrinth.com/plugin/discordsrv",
-            "version": "1.27.0"
+            "url": "https://modrinth.com/plugin/discordsrv"
         }
     ]
 }
