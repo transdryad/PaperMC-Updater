@@ -12,6 +12,12 @@
             "provider": "github",
             "id": "IntellectualSites/FastAsyncWorldEdit",
             "url": "https://github.com/IntellectualSites/FastAsyncWorldEdit/"
+        },
+        {
+            "name": "TimePauser",
+            "provider": "spigot",
+            "id": "100100",
+            "url": "https://www.spigotmc.org/resources/timepauser.100100/"
         }
     ]
 }

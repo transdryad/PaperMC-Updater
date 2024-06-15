@@ -9,14 +9,14 @@ def download(plugin, server_ver, headers):
 
     if provider == "modrinth":
         print("Downloading " + name + " from Modrinth...")
-        response = requests.get('https://api.modrinth.com/v2/project/' + plugin_id, headers=headers)
+        response = requests.get('https://api.modrinth.com/v2/project/' + plugin_id, headers=headers, allow_redirects=True)
         response = response.json()
         if server_ver in response["game_versions"]:
             params = {
                 'game_versions': '["' + server_ver + '"]'
             }
             versions = requests.get('https://api.modrinth.com/v2/project/' + plugin_id + "/version", params=params,
-                                    headers=headers)
+                                    headers=headers, allow_redirects=True)
             versions = versions.json()
             expected_hash = versions[0]["files"][0]["hashes"]["sha512"]
             url = versions[0]["files"][0]["url"]
@@ -28,18 +28,15 @@ def download(plugin, server_ver, headers):
                 f.write(response.content)
 
             new_hash = hash.hasher(filename, 512)
-            print("Hash of the downloaded file: " + new_hash)  # Get the hexadecimal digest of the hash
 
-            if new_hash == str(expected_hash):
-                print("Hash OK")
-            else:
+            if not new_hash == str(expected_hash):
                 print("Bad hash, incorrect or unexpected file. Please Manually check the file.")
         else:
             print("There is no available version of " + name + " for " + server_ver + ". Sorry")
 
     elif provider == "github":
         print("Downloading " + name + " from Github...")
-        response = requests.get("https://api.github.com/repos/" + plugin_id + "/releases", headers=headers)
+        response = requests.get("https://api.github.com/repos/" + plugin_id + "/releases", headers=headers, allow_redirects=True)
         releases = response.json()
         release = releases[0]  # Is a dictionary
         filename = release["assets"][0]["name"]
@@ -49,3 +46,9 @@ def download(plugin, server_ver, headers):
         new_file = requests.get(download_url)
         with open(filename, 'wb') as f:
             f.write(new_file.content)
+    elif provider == "spigot":
+        print("Downloading " + name + " from Spigot...")
+        filename = "./plugins/update/" + name + ".jar"
+        response = requests.get("https://api.spiget.org/v2/resources/" + plugin_id + "/download", headers=headers, allow_redirects=True)
+        with open(filename, 'wb') as f:
+            f.write(response.content)
