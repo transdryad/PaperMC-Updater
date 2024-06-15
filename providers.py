@@ -1,43 +1,36 @@
 import requests
-import hashlib
+import hash
+
+
 def download(plugin, server_ver, headers):
-    #print(plugin)
     name = plugin["name"]
     provider = plugin["provider"]
-    id = plugin["id"]
-    
+    plugin_id = plugin["id"]
+
     if provider == "modrinth":
         print("Downloading " + name + " from Modrinth...")
-        response = requests.get('https://api.modrinth.com/v2/project/' + id, headers=headers)
+        response = requests.get('https://api.modrinth.com/v2/project/' + plugin_id, headers=headers)
         response = response.json()
         if server_ver in response["game_versions"]:
             params = {
                 'game_versions': '["' + server_ver + '"]'
             }
-            versions = requests.get('https://api.modrinth.com/v2/project/' + id + "/version",params=params, headers=headers)
+            versions = requests.get('https://api.modrinth.com/v2/project/' + plugin_id + "/version", params=params,
+                                    headers=headers)
             versions = versions.json()
-            hash = versions[0]["files"][0]["hashes"]["sha512"]
+            expected_hash = versions[0]["files"][0]["hashes"]["sha512"]
             url = versions[0]["files"][0]["url"]
             filename = versions[0]["files"][0]["filename"]
-            
-            response = requests.get(url,)
-            
+
+            response = requests.get(url, )
+
             with open(filename, 'wb') as f:
                 f.write(response.content)
-            
-            file = filename # Location of the file (can be set a different way)
-            BLOCK_SIZE = 131072 # The size of each read from the file
 
-            file_hash = hashlib.sha512() # Create the hash object, can use something other than `.sha256()` if you wish
-            with open(file, 'rb') as f: # Open the file to read it's bytes
-                fb = f.read(BLOCK_SIZE) # Read from the file. Take in the amount declared above
-                while len(fb) > 0: # While there is still data being read from the file
-                    file_hash.update(fb) # Update the hash
-                    fb = f.read(BLOCK_SIZE) # Read the next block from the file
+            new_hash = hash.sha512(filename)
+            print("Hash of the downloaded file: " + new_hash)  # Get the hexadecimal digest of the hash
 
-            print("Hash of the downloaded file: " + str(file_hash.hexdigest())) # Get the hexadecimal digest of the hash
-
-            if str(file_hash.hexdigest()) == str(hash):
+            if new_hash == str(expected_hash):
                 print("Hash OK")
             else:
                 print("Bad hash, incorrect or unexpected file. Please Manually check the file.")
