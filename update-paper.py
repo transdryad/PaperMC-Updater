@@ -48,7 +48,7 @@ with open(filename, 'wb') as f:
 
 # Hash it to be sure nothing funky happened on the way.
 
-new_hash = hash.sha256(filename)
+new_hash = hash.hasher(filename, 256)
 print("Hash of the downloaded file: " + new_hash)  # Get the hexadecimal digest of the hash
 
 if new_hash == str(sha256):

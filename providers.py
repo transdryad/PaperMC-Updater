@@ -27,7 +27,7 @@ def download(plugin, server_ver, headers):
             with open(filename, 'wb') as f:
                 f.write(response.content)
 
-            new_hash = hash.sha512(filename)
+            new_hash = hash.hasher(filename, 512)
             print("Hash of the downloaded file: " + new_hash)  # Get the hexadecimal digest of the hash
 
             if new_hash == str(expected_hash):
