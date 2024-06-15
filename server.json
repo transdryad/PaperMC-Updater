@@ -1,19 +1,19 @@
 {
-  "version": "1.20.1",
-  "plugins": [
-    {
-      "name": "Chunky",
-      "provider": "modrinth",
-      "id": "fALzjamp",
-      "url": "https://modrinth.com/plugin/chunky",
-      "version": "1.4.10"
-    },
-    {
-      "name": "DiscordSRV",
-      "provider": "modrinth",
-      "id": "UmLGoGij", 
-      "url": "https://modrinth.com/plugin/discordsrv",
-      "version": "1.27.0"
-    }
-  ]
+    "version": "1.20.1",
+    "plugins": [
+        {
+            "name": "Chunky",
+            "provider": "modrinth",
+            "id": "fALzjamp",
+            "url": "https://modrinth.com/plugin/chunky",
+            "version": "1.4.10"
+        },
+        {
+            "name": "DiscordSRV",
+            "provider": "modrinth",
+            "id": "UmLGoGij",
+            "url": "https://modrinth.com/plugin/discordsrv",
+            "version": "1.27.0"
+        }
+    ]
 }

@@ -1,6 +1,7 @@
 import requests
 import hash
 import os
+import json
 
 URL_BASE = 'https://api.papermc.io'
 
@@ -58,4 +59,13 @@ else:
     exit()
 
 os.system("chmod a+x " + filename)
+
+with open("server.json", "r") as read_file:
+    data = json.load(read_file)
+
+data["version"] = selected_version
+
+with open("server.json", "w") as write_file:
+    json.dump(data, write_file, indent=4)
+
 print("Now go change your server startup script and delete the old server jar.")
