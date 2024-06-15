@@ -7,6 +7,7 @@ import providers
 headers = {
     'Content-Type': 'application/json',
     'User-Agent': 'transdryad/PaperMC-Updater/1.0 (viswanathsam@gmail.com)',
+    'accept': 'application/json',
 }
 
 print("Grabbing server info...")

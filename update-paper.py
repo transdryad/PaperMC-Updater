@@ -6,6 +6,8 @@ import os
 URL_BASE = 'https://api.papermc.io'
 
 HEADERS = {
+    'Content-Type': 'application/json',
+    'User-Agent': 'transdryad/PaperMC-Updater/1.0 (viswanathsam@gmail.com)',
     'accept': 'application/json',
 }
 
