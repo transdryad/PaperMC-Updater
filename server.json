@@ -8,10 +8,10 @@
             "url": "https://modrinth.com/plugin/chunky"
         },
         {
-            "name": "DiscordSRV",
-            "provider": "modrinth",
-            "id": "UmLGoGij",
-            "url": "https://modrinth.com/plugin/discordsrv"
+            "name": "FastAsyncWorldEdit",
+            "provider": "github",
+            "id": "IntellectualSites/FastAsyncWorldEdit",
+            "url": "https://github.com/IntellectualSites/FastAsyncWorldEdit/"
         }
     ]
 }

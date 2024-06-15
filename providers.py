@@ -36,3 +36,16 @@ def download(plugin, server_ver, headers):
                 print("Bad hash, incorrect or unexpected file. Please Manually check the file.")
         else:
             print("There is no available version of " + name + " for " + server_ver + ". Sorry")
+
+    elif provider == "github":
+        print("Downloading " + name + " from Github...")
+        response = requests.get("https://api.github.com/repos/" + plugin_id + "/releases", headers=headers)
+        releases = response.json()
+        release = releases[0]  # Is a dictionary
+        filename = release["assets"][0]["name"]
+        filename = "./plugins/update/" + filename
+        download_url = release["assets"][0]["browser_download_url"]
+
+        new_file = requests.get(download_url)
+        with open(filename, 'wb') as f:
+            f.write(new_file.content)

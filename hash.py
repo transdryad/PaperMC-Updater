@@ -2,7 +2,7 @@ import hashlib
 
 
 def hasher(filename, size):
-    file: str = filename  # Location of the file (can be set a different way)
+    file: str = filename  # Location of the file
     BLOCK_SIZE = 131072  # The size of each read from the file
 
     if size == 256:
