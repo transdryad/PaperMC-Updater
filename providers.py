@@ -3,6 +3,7 @@ import hash
 
 
 def download(plugin, server_ver, headers):
+    global response
     name = plugin["name"]
     provider = plugin["provider"]
     plugin_id = plugin["id"]
@@ -49,6 +50,20 @@ def download(plugin, server_ver, headers):
     elif provider == "spigot":
         print("Downloading " + name + " from Spigot...")
         filename = "./plugins/update/" + name + ".jar"
-        response = requests.get("https://api.spiget.org/v2/resources/" + plugin_id + "/download", headers=headers, allow_redirects=True)
+        response = requests.get("https://api.spiget.org/v2/resources/" + plugin_id + "/download", headers=headers,
+                                allow_redirects=True)
+        with open(filename, 'wb') as f:
+            f.write(response.content)
+    elif provider == "geyser":
+        print("Downloading " + name + " from the GeyserMC website...")
+        filename = "./plugins/update/" + name + "-Spigot.jar"
+        if id == "geyser":
+            response = requests.get(
+                "https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/spigot",
+                headers=headers, allow_redirects=True)
+        if id == "floodgate":
+            response = requests.get(
+                "https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/spigot",
+                headers=headers, allow_redirects=True)
         with open(filename, 'wb') as f:
             f.write(response.content)

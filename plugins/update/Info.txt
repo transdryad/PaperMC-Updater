@@ -1,0 +1,1 @@
+This is the directory where paper will move the new plugins into the old plugin folder and replace them, saving us some trouble.

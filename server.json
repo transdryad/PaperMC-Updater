@@ -18,6 +18,18 @@
             "provider": "spigot",
             "id": "100100",
             "url": "https://www.spigotmc.org/resources/timepauser.100100/"
+        },
+        {
+            "name": "Geyser",
+            "provider": "geyser",
+            "id": "geyser",
+            "url": "https://geysermc.org/"
+        },
+        {
+            "name": "Floodgate",
+            "provider": "geyser",
+            "id": "floodgate",
+            "url": "https://geysermc.org/"
         }
     ]
 }

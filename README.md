@@ -5,3 +5,5 @@ what the PaperMC API expects it to be, the new server jar is marked as executabl
 
 It is meant to be run in the same folder as the paper jarfile,
 so that it can place plugin downloads in the correct location.
+
+This script only works on linux, and possibly mac.
