@@ -21,6 +21,7 @@ def download(plugin, server_ver, headers):
             expected_hash = versions[0]["files"][0]["hashes"]["sha512"]
             url = versions[0]["files"][0]["url"]
             filename = versions[0]["files"][0]["filename"]
+            filename = "./plugins/update/" + filename
 
             response = requests.get(url, )
 
