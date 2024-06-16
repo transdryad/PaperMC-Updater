@@ -14,7 +14,8 @@ def download(plugin, server_ver, headers):
         response = response.json()
         if server_ver in response["game_versions"]:
             params = {
-                'game_versions': '["' + server_ver + '"]'
+                'game_versions': '["' + server_ver + '"]',
+                'loaders': '["paper", "spigot", "bukkit"]'
             }
             versions = requests.get('https://api.modrinth.com/v2/project/' + plugin_id + "/version", params=params,
                                     headers=headers, allow_redirects=True)
