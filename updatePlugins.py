@@ -22,4 +22,4 @@ def update():
             providers.download(x, version, headers)
     else:
         print(
-            "No plugins are available to be updated. Either you have no installed plugins or the plugins haven't been properly added to server.json")
+            "No plugins are available to be updated. Either you have no installed plugins or the plugins haven't been properly added to server.json.")
