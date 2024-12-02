@@ -7,7 +7,7 @@ URL_BASE = 'https://api.papermc.io'
 
 HEADERS = {
     'Content-Type': 'application/json',
-    'User-Agent': 'transdryad/PaperMC-Updater/1.0 (viswanathsam@gmail.com)',
+    'User-Agent': 'transdryad/PaperMC-Updater/1.0 (viswanath.hazel@gmail.com)',
     'accept': 'application/json',
 }
 
@@ -64,12 +64,5 @@ def download():
 
     os.system("chmod a+x " + filename)
 
-    with open("server.json", "r") as read_file:
-        data = json.load(read_file)
-
-    data["version"] = selected_version
-
-    with open("server.json", "w") as write_file:
-        json.dump(data, write_file, indent=4)
-
     print("Now go change your server startup script and delete the old server jar.")
+    return filename, selected_version

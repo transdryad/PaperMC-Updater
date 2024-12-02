@@ -33,7 +33,7 @@ def download(plugin, server_ver, headers):
             if not new_hash == str(expected_hash):
                 print("Bad hash, incorrect or unexpected file. Please Manually check the file.")
         else:
-            print("There is no available version of " + name + " for " + server_ver + ". Sorry")
+            print("There is no available version of " + name + " for " + server_ver + ". Sorry.")
 
     elif provider == "github":
         print("Downloading " + name + " from Github...")

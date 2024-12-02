@@ -3,17 +3,23 @@ import providers
 
 headers = {
     'Content-Type': 'application/json',
-    'User-Agent': 'transdryad/PaperMC-Updater/1.0 (viswanathsam@gmail.com)',
+    'User-Agent': 'transdryad/PaperMC-Updater/1.0 (viswanath.hazel@gmail.com)',
     'accept': 'application/json',
 }
 
-print("Grabbing server info...")
 
-with open("server.json", "r") as read_file:
-    server_info = json.load(read_file)
+def update():
+    print("Grabbing server info...")
 
-plugins = server_info["plugins"]
-version = server_info["version"]
+    with open("server.json", "r") as read_file:
+        server_info = json.load(read_file)
 
-for x in plugins:
-    providers.download(x, version, headers)
+    plugins = server_info["plugins"]
+    version = server_info["version"]
+
+    if plugins:
+        for x in plugins:
+            providers.download(x, version, headers)
+    else:
+        print(
+            "No plugins are available to be updated. Either you have no installed plugins or the plugins haven't been properly added to server.json")
