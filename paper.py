@@ -1,7 +1,6 @@
 import requests
 import hash
 import os
-import json
 
 URL_BASE = 'https://api.papermc.io'
 
@@ -64,5 +63,5 @@ def download():
 
     os.system("chmod a+x " + filename)
 
-    print("Now go change your server startup script and delete the old server jar.")
+    #print("Now go change your server startup script and delete the old server jar.")
     return filename, selected_version

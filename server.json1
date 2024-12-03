@@ -1,5 +1,6 @@
 {
     "version": "1.20.1",
+    "memory": 4,
     "plugins": [
         {
             "name": "Chunky",
@@ -30,6 +31,11 @@
             "provider": "geyser",
             "id": "floodgate",
             "url": "https://geysermc.org/"
+        },
+        {
+            "name": "ViaVersion",
+            "provider": "hangar",
+            "id": "ViaVersion"
         }
     ]
 }
