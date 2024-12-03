@@ -63,5 +63,4 @@ def download():
 
     os.system("chmod a+x " + filename)
 
-    #print("Now go change your server startup script and delete the old server jar.")
     return filename, selected_version
