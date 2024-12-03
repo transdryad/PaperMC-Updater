@@ -5,32 +5,27 @@
         {
             "name": "Chunky",
             "provider": "modrinth",
-            "id": "fALzjamp",
-            "url": "https://modrinth.com/plugin/chunky"
+            "id": "fALzjamp"
         },
         {
             "name": "FastAsyncWorldEdit",
             "provider": "github",
-            "id": "IntellectualSites/FastAsyncWorldEdit",
-            "url": "https://github.com/IntellectualSites/FastAsyncWorldEdit/"
+            "id": "IntellectualSites/FastAsyncWorldEdit"
         },
         {
             "name": "TimePauser",
             "provider": "spigot",
-            "id": "100100",
-            "url": "https://www.spigotmc.org/resources/timepauser.100100/"
+            "id": "100100"
         },
         {
             "name": "Geyser",
             "provider": "geyser",
-            "id": "geyser",
-            "url": "https://geysermc.org/"
+            "id": "geyser"
         },
         {
             "name": "Floodgate",
             "provider": "geyser",
-            "id": "floodgate",
-            "url": "https://geysermc.org/"
+            "id": "floodgate"
         },
         {
             "name": "ViaVersion",
