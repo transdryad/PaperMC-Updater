@@ -29,11 +29,12 @@ def create():
 
 def update():
     print("updating server file...")
+    with open("server.json", "r") as read_file:
+        server_info = json.load(read_file)
+    print("Current version: " + server_info["version"])
     info = paper.download()
     filename = info[0]
     version = info[1]
-    with open("server.json", "r") as read_file:
-        server_info = json.load(read_file)
     memory_limit = server_info["memory"]
     flags.make_script(memory_limit, filename)
     server_info["version"] = version
