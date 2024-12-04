@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'PaperMC Updater'
+copyright = '2025, Hazel Viswanath'
+author = 'Hazel Viswanath'
 
 release = '0.1'
 version = '0.1.0'
