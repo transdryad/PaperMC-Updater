@@ -1,14 +1,9 @@
 import requests
 from .hash import hasher
+from .main import HEADERS
 import os
 
 URL_BASE = 'https://api.papermc.io'
-
-HEADERS = {
-    'Content-Type': 'application/json',
-    'User-Agent': 'transdryad/PaperMC-Updater/1.0 (viswanath.hazel@gmail.com)',
-    'accept': 'application/json',
-}
 
 
 def download():

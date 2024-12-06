@@ -1,11 +1,6 @@
 from .providers import download
+from .main import HEADERS
 import json
-
-headers = {
-    'Content-Type': 'application/json',
-    'User-Agent': 'transdryad/PaperMC-Updater/1.0 (viswanath.hazel@gmail.com)',
-    'accept': 'application/json',
-}
 
 
 def install_plugin(name, provider, identifier):
@@ -18,4 +13,4 @@ def install_plugin(name, provider, identifier):
     server_info["plugins"].append(plugin)
     with open("server.json", "w") as write_file:
         json.dump(server_info, write_file, indent=4)
-    download(plugin, headers, True)
+    download(plugin, HEADERS, True)

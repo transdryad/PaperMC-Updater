@@ -9,6 +9,12 @@ from .install_plugin import install_plugin
 
 current_dir = os.getcwd()
 
+HEADERS = {
+    'Content-Type': 'application/json',
+    'User-Agent': 'transdryad/PaperMC-Updater/1.0 (viswanath.hazel@gmail.com)',
+    'accept': 'application/json',
+}
+
 
 # import updatePlugins
 def create():

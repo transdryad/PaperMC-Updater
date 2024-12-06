@@ -1,12 +1,7 @@
 import json
 from .providers import download
+from .main import HEADERS
 import os
-
-headers = {
-    'Content-Type': 'application/json',
-    'User-Agent': 'transdryad/PaperMC-Updater/1.0 (viswanath.hazel@gmail.com)',
-    'accept': 'application/json',
-}
 
 
 def update_plugins(init):
@@ -20,7 +15,7 @@ def update_plugins(init):
         os.makedirs("./plugins/update")
     if plugins:
         for x in plugins:
-            download(x, headers, init)
+            download(x, HEADERS, init)
     else:
         print(
             "No plugins are available to be updated. Either you have no installed plugins or the plugins haven't been properly added to server.json.")
