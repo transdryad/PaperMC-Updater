@@ -1,5 +1,5 @@
 import requests
-import hash
+from .hash import hasher
 import os
 
 URL_BASE = 'https://api.papermc.io'
@@ -52,7 +52,7 @@ def download():
 
     # Hash it to be sure nothing funky happened on the way.
 
-    new_hash = hash.hasher(filename, 256)
+    new_hash = hasher(filename, 256)
     print("Hash of the downloaded file: " + new_hash)  # Get the hexadecimal digest of the hash
 
     if new_hash == str(sha256):

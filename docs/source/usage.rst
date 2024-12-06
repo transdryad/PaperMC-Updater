@@ -1,7 +1,7 @@
 Usage
 =====
 
-.. _installation:
+.. _install:
 
 Installation
 ------------
@@ -16,6 +16,9 @@ Creating the server
 ----------------
 
 To create a server for the first time, run:
+
 .. code-block:: console
+
    $ python3 main.py create
+
 It will download the server software, agree to minecraft's EULA, create the server.conf file, and create the startup script.

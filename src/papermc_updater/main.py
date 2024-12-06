@@ -2,21 +2,23 @@ import argparse
 import json
 import os
 
-import paper
-import flags
-import updatePlugins
-import install_plugin
+from .paper import download
+from .flags import make_script
+from .updatePlugins import update_plugins
+from .install_plugin import install_plugin
+
+current_dir = os.getcwd()
 
 
 # import updatePlugins
 def create():
     print("creating the server...")
-    info = paper.download()
+    info = download()
     print(info)
     filename = info[0]
     version = info[1]
     memory_limit = int(input("Enter the amount of memory the server should have, in GB: "))
-    flags.make_script(memory_limit, filename)
+    make_script(memory_limit, filename)
     with open("base.json", "r") as read_file:
         data = json.load(read_file)
     data["memory"] = memory_limit
@@ -32,11 +34,11 @@ def update():
     with open("server.json", "r") as read_file:
         server_info = json.load(read_file)
     print("Current version: " + server_info["version"])
-    info = paper.download()
+    info = download()
     filename = info[0]
     version = info[1]
     memory_limit = server_info["memory"]
-    flags.make_script(memory_limit, filename)
+    make_script(memory_limit, filename)
     server_info["version"] = version
     with open("server.json", "w") as write_file:
         json.dump(server_info, write_file, indent=4)
@@ -44,7 +46,7 @@ def update():
 
 def plugin_update():
     print("updating server plugins...")
-    updatePlugins.update(False)
+    update_plugins(False)
 
 
 def install():
@@ -53,7 +55,7 @@ def install():
     identifier = input("Enter the plugin's id, slug, or github repo in format <user>/<project>")
     if not os.path.exists("./plugins/update"):
         os.makedirs("./plugins/update")
-    install_plugin.install(name, provider, identifier)
+    install_plugin(name, provider, identifier)
 
 
 def update_full():
@@ -62,7 +64,7 @@ def update_full():
 
 
 def initialize():
-    updatePlugins.update(True)
+    update_plugins(True)
 
 
 parser = argparse.ArgumentParser()
@@ -90,5 +92,7 @@ parser_update_full = subparsers.add_parser("initialize",
                                            help="initialize all plugins from the config file (to facilitate easy server transplanting)")
 parser_update_full.set_defaults(func=initialize)
 
-args = parser.parse_args()
-args.func()
+
+def main():
+    args = parser.parse_args()
+    args.func()

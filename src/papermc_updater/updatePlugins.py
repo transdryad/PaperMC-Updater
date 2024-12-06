@@ -1,5 +1,5 @@
 import json
-import providers
+from .providers import download
 import os
 
 headers = {
@@ -9,7 +9,7 @@ headers = {
 }
 
 
-def update(init):
+def update_plugins(init):
     print("Grabbing server info...")
 
     with open("server.json", "r") as read_file:
@@ -20,7 +20,7 @@ def update(init):
         os.makedirs("./plugins/update")
     if plugins:
         for x in plugins:
-            providers.download(x, headers, init)
+            download(x, headers, init)
     else:
         print(
             "No plugins are available to be updated. Either you have no installed plugins or the plugins haven't been properly added to server.json.")

@@ -5,7 +5,7 @@ Welcome to PaparMC-Updater's documentation!
 that has an inbuilt package manager for plugins.
 
 Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+how to :ref:`install` the project.
 
 .. note::
 

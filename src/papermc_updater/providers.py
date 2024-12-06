@@ -1,5 +1,5 @@
 import requests
-import hash
+from .hash import hasher
 
 import os
 
@@ -36,7 +36,7 @@ def download(plugin, headers, install):
         with open(filename, 'wb') as f:
             f.write(response.content)
 
-        new_hash = hash.hasher(filename, 512)
+        new_hash = hasher(filename, 512)
 
         if not new_hash == str(expected_hash):
             print("Bad hash, incorrect or unexpected file. Please Manually check the file.")

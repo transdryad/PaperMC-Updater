@@ -1,4 +1,4 @@
-import providers
+from .providers import download
 import json
 
 headers = {
@@ -8,7 +8,7 @@ headers = {
 }
 
 
-def install(name, provider, identifier):
+def install_plugin(name, provider, identifier):
     with open("server.json", "r") as read_file:
         server_info = json.load(read_file)
     plugin = {"name": name, "provider": provider, "id": identifier}
@@ -18,4 +18,4 @@ def install(name, provider, identifier):
     server_info["plugins"].append(plugin)
     with open("server.json", "w") as write_file:
         json.dump(server_info, write_file, indent=4)
-    providers.download(plugin, headers, True)
+    download(plugin, headers, True)
