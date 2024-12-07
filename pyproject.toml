@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 path = "src/papermc_updater/__about__.py"
 
 [project]
-name = "PaperMC-Updater"
+name = "PMCU"
 readme = {"file" = "README.md", "content-type" = "text/markdown"}
 requires-python = ">=3.11.1"
 license = "GPL-3.0-or-later"
