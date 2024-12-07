@@ -1,6 +1,6 @@
 import requests
 from .hash import hasher
-from .main import HEADERS
+from .vars import HEADERS
 import os
 
 URL_BASE = 'https://api.papermc.io'

@@ -2,18 +2,12 @@ import argparse
 import json
 import os
 
+
 from .paper import download
 from .flags import make_script
 from .updatePlugins import update_plugins
 from .install_plugin import install_plugin
-
-current_dir = os.getcwd()
-
-HEADERS = {
-    'Content-Type': 'application/json',
-    'User-Agent': 'transdryad/PaperMC-Updater/1.0 (viswanath.hazel@gmail.com)',
-    'accept': 'application/json',
-}
+from .vars import BASE_DIR, CURRENT_DIR
 
 
 # import updatePlugins
@@ -25,7 +19,7 @@ def create():
     version = info[1]
     memory_limit = int(input("Enter the amount of memory the server should have, in GB: "))
     make_script(memory_limit, filename)
-    with open("base.json", "r") as read_file:
+    with open(BASE_DIR + "/static/base.json", "r") as read_file:
         data = json.load(read_file)
     data["memory"] = memory_limit
     data["version"] = version
@@ -100,5 +94,6 @@ parser_update_full.set_defaults(func=initialize)
 
 
 def main():
+    print("Running in: " + CURRENT_DIR)
     args = parser.parse_args()
     args.func()

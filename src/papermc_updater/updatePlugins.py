@@ -1,6 +1,6 @@
 import json
 from .providers import download
-from .main import HEADERS
+from .vars import HEADERS
 import os
 
 

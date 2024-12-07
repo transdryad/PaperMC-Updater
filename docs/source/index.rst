@@ -1,4 +1,4 @@
-Welcome to PaparMC-Updater's documentation!
+Welcome to PaperMC-Updater's documentation!
 ===================================
 
 **PaperMC-Updater** is a Python script for managing a minecraft server
