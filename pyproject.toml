@@ -28,6 +28,7 @@ exclude = [
     "server.json1",
     ".gitignore",
     ".readthedocs.yaml",
+    "/tests"
 ]
 
 [tool.hatch.build.targets.wheel]

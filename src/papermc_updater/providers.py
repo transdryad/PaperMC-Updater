@@ -20,7 +20,7 @@ def download(plugin, headers, install):
     if provider == "modrinth":
         print("Downloading " + name + " from Modrinth...")
         params = {
-            'loaders': '["paper", "spigot", "bukkit"]'
+            'loaders': '["paper"]'
         }
         versions = requests.get('https://api.modrinth.com/v2/project/' + plugin_id + "/version", params=params,
                                 headers=headers, allow_redirects=True)

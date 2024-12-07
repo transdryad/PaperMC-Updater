@@ -12,7 +12,7 @@ from .vars import BASE_DIR, CURRENT_DIR
 
 # import updatePlugins
 def create():
-    print("creating the server...")
+    print("Creating the server...")
     info = download()
     print(info)
     filename = info[0]
@@ -30,7 +30,7 @@ def create():
 
 
 def update():
-    print("updating server file...")
+    print("Updating server file...")
     with open("server.json", "r") as read_file:
         server_info = json.load(read_file)
     print("Current version: " + server_info["version"])
@@ -45,14 +45,14 @@ def update():
 
 
 def plugin_update():
-    print("updating server plugins...")
+    print("Updating server plugins...")
     update_plugins(False)
 
 
 def install():
     name = input("Enter the plugin's name: ")
-    provider = input("Enter the plugin's provider: (github, modrinth, hangar, spigot, or geyser)")
-    identifier = input("Enter the plugin's id, slug, or github repo in format <user>/<project>")
+    provider = input("Enter the plugin's provider: (github, modrinth, hangar, spigot, or geyser): ")
+    identifier = input("Enter the plugin's id, slug, or github repo: ")
     if not os.path.exists("./plugins/update"):
         os.makedirs("./plugins/update")
     install_plugin(name, provider, identifier)
