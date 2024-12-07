@@ -49,7 +49,7 @@ To update the server, run:
 
 .. code-block:: console
 
-    pmcu update
+    $ pmcu update
 
 You will be notifed of your current minecraft server version.
 When you are asked to enter your desired version, pick one from the list or stick with the one you had.
@@ -60,12 +60,12 @@ To install a plugin, run:
 
 .. code-block:: console
 
-    pmcu install
+    $ pmcu install
 
 To update all plugins, run:
 
 .. code-block:: console
 
-    pmcu update-plugins
+    $ pmcu update-plugins
 
 For more information on plugins, see :doc:`plugins`
