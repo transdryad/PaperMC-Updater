@@ -1,5 +1,5 @@
 # Configuration file for the Sphinx documentation builder.
-import sphinx_pdj_theme
+import sphinx-pdj-theme
 # -- Project information
 
 project = 'PaperMC Updater'
@@ -30,7 +30,7 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
-html_theme = 'sphinx-pdj-theme'
+html_theme = 'sphinx_pdj_theme'
 html_theme_path = [sphinx_pdj_theme.get_html_theme_path()]
 
 # -- Options for EPUB output
