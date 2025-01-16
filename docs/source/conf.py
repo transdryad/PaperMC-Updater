@@ -1,5 +1,5 @@
 # Configuration file for the Sphinx documentation builder.
-import sphinx-pdj-theme
+import sphinx_pdj_theme
 # -- Project information
 
 project = 'PaperMC Updater'
