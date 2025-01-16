@@ -2,7 +2,7 @@
 
 **This project is under active development! Features may change or be removed at any time! Not for production usage!**
 
-Thanks to PaperMC for their minecraft server software.
+Thanks to PaperMC for their Minecraft server software.
 
 This simple script can manage and update PaperMC servers and minecraft plugins.
 
