@@ -1,5 +1,8 @@
 # Configuration file for the Sphinx documentation builder.
 import sphinx_pdj_theme
+html_theme = 'sphinx_pdj_theme'
+html_theme_path = [sphinx_pdj_theme.get_html_theme_path()]
+
 # -- Project information
 
 project = 'PaperMC Updater'
@@ -27,11 +30,6 @@ intersphinx_mapping = {
 intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
-
-# -- Options for HTML output
-
-html_theme = 'sphinx_pdj_theme'
-#html_theme_path = [sphinx_pdj_theme.get_html_theme_path()]
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
