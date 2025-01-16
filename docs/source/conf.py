@@ -28,6 +28,8 @@ intersphinx_disabled_domains = ['std']
 templates_path = ['_templates']
 
 html_theme = 'python_docs_theme'
+html_logo = 'images/logo.png'
+html_favicon = 'images/favicon.png'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
