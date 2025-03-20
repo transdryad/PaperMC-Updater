@@ -1,7 +1,9 @@
+publish.sh
 .idea/
 server.json1
 todo
 testing area/
+testing-area/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

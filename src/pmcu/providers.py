@@ -49,7 +49,6 @@ def download(plugin, headers, install):
         releases = response.json()
         release = releases[0]  # Is a dictionary
         newest_version = release["name"]
-        print(newest_version)
         filename = newest_version + "-" + release["assets"][0]["name"]
         if plugin_version_exists(filename):
             print("No updates")
@@ -77,7 +76,8 @@ def download(plugin, headers, install):
     elif provider == "geyser":
         print("Downloading " + name + " from the GeyserMC website...")
         version = requests.get("https://download.geysermc.org/v2/projects/" + plugin_id, headers=headers, allow_redirects=True).json()["versions"][-1]
-        filename = name + "-" + version + ".jar"
+        build = requests.get("https://download.geysermc.org/v2/projects/" + plugin_id + "/versions/latest/builds", headers=headers, allow_redirects=True).json()["builds"][-1]["build"]
+        filename = name + "-" + version + "-" + str(build) + ".jar"
         if plugin_version_exists(filename):
             print("No updates")
             return
@@ -95,7 +95,7 @@ def download(plugin, headers, install):
         response = response.json()
 
         url = response["result"][0]["downloads"]["PAPER"]["downloadUrl"]
-        filename = response["result"][0]["downloads"]["PAPER"]["fileInfo"]["name"]
+        filename = response["result"][0]["name"] + ".jar"
         if plugin_version_exists(filename):
             print("No updates")
             return
